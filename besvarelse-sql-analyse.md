@@ -65,28 +65,28 @@ Forklar hva følgende SQL-spørringer gjør, og hvorfor resultatene blir som de 
     SELECT COUNT(*), COUNT(Bonus) FROM Ansatt;
     ```
     **Forklaring:**
-    *   *... Skriv din forklaring her ...*
+    *   Spørringen viser antall av ansatt, antall av bonuser til de ansatte.
 
 2.  **Spørring:**
     ```sql
     SELECT AVG(Bonus) FROM Ansatt;
     ```
     **Forklaring:**
-    *   *... Skriv din forklaring her ...*
+    *   Spørringen viser midt-verdi elle gjennomsnitt av alle Bonuser i Ansatt tabellen.
 
 3.  **Spørring:**
     ```sql
     SELECT Fornavn, Etternavn, COALESCE(Bonus, 0) AS JustertBonus FROM Ansatt;
     ```
     **Forklaring:**
-    *   *... Skriv din forklaring her ...*
+    *   Soørring viser Fornavn, Etternavn, Bonus ELLER 0 hvis bonus finnes ikke for ansatt med navnet "JustertBonus".
 
 4.  **Spørring:**
     ```sql
     SELECT Stilling, SUM(Årslønn + Bonus) FROM Ansatt GROUP BY Stilling;
     ```
     **Forklaring:**
-    *   *... Skriv din forklaring her ...*
+    *   Spørring viser Stilling, summen av åslønn og bonus verdier fra Ansatt tabellen, og summen gruperes og vises med en Stilling, så det betyr at summen av alle ansatte i en stilling legges til og vises. Vil jeg si at summen beregnes per ansatt før de ansatte legges til gruppen vi grupperer.
 
 ## Oppgave 6: Tre-verdi Logikk (TRUE, FALSE, UNKNOWN)
 
@@ -101,25 +101,25 @@ Forklar resultatet av følgende SQL-spørringer. Hvorfor returnerer de det de gj
     SELECT COUNT(*) FROM Ordre WHERE ErBetalt = TRUE;
     ```
     **Forklaring:**
-    *   *... Skriv din forklaring her ...*
+    *   I spørringen vises antall av ordrere som har ErBetalt verdi. Det betyr alle ordrere som ble betalt sorteres, og de som har IkkeBetalt verdi eller NULL (som også mulig) vises ikke.
 
 2.  **Spørring:**
     ```sql
     SELECT COUNT(*) FROM Ordre WHERE ErBetalt = FALSE;
     ```
     **Forklaring:**
-    *   *... Skriv din forklaring her ...*
+    *   Her viser vi antall av ordre som derimot ble ikke betalte, samme som siste eksemplet men motsatt.
 
 3.  **Spørring:**
     ```sql
     SELECT COUNT(*) FROM Ordre WHERE ErBetalt = TRUE OR ErBetalt = FALSE;
     ```
     **Forklaring:**
-    *   *... Skriv din forklaring her ...*
+    *   Her vises disse ordrene sammen, som her og ErBetalt verdi og IkkeBetalt eller ErBetalt = false.
 
 4.  **Spørring:**
     ```sql
     SELECT COUNT(*) FROM Ordre WHERE ErBetalt IS UNKNOWN;
     ```
     **Forklaring:**
-    *   *... Skriv din forklaring her ...*
+    *  Her vises alle ordre som her UNKNOWN eller NULL verdi, som er også ikke bestemt. Det betyr alle ordrene som har ErBetalt = true eller false finnes ikke i resultatet, fordi de er bestemte. 
